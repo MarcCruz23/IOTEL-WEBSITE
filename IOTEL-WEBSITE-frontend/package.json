@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "node scripts/serveFrontend.js",
+    "e2e": "playwright test"
+  },
+  "private": true,
+  "packageManager": "npm@10.8.2",
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2"
+  }
+}

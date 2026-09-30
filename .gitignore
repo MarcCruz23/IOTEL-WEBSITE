@@ -1,0 +1,19 @@
+# Don't upload dependencies
+node_modules/
+
+# Don't upload environment secrets
+.env
+.env.*
+
+# Don't upload Firebase Admin private credentials
+*-firebase-adminsdk-*.json
+serviceAccountKey.json
+
+# Don't upload private uploads
+private-uploads/
+
+# VS Code
+.vscode/
+
+# Logs
+*.log

@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>IOTEL — Settings</title>
+    <link rel="stylesheet" href="static/css/global.css" />
+    <link rel="stylesheet" href="static/css/settings.css" />
+  </head>
+  <body>
+    <header class="customer-header">
+      <div class="header-inner">
+        <div class="brand">
+          <a href="catalog.html" class="brand-link">
+            <span class="brand-name">IOTEL</span>
+            <span class="brand-sub">by Goldcomm</span>
+          </a>
+        </div>
+        <nav class="header-nav">
+          <a href="catalog.html" class="nav-link">Catalog</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="orders.html" class="nav-link">Orders</a>
+          <a href="messages.html" class="nav-link">Messages</a>
+          <a href="about.html" class="nav-link">About</a>
+        </nav>
+        <div class="header-actions">
+          <a href="cart.html" class="cart-btn"><span class="cart-icon-btn">🛒</span></a>
+          <div class="profile-menu" id="profileMenuContainer">
+            <button class="profile-btn" id="profileMenuBtn">
+              👤 <span class="user-name">Guest</span> ▼
+            </button>
+            <div class="profile-dropdown" id="profileDropdown" style="display: none">
+              <a href="settings.html" class="dropdown-item">Profile</a>
+              <a href="addresses.html" class="dropdown-item">My Addresses</a>
+              <a href="settings.html" class="dropdown-item">Settings</a>
+              <div class="dropdown-divider"></div>
+              <button id="headerLogoutBtn2" class="dropdown-item logout-item" data-i18n="Log Out">
+                Log Out
+              </button>
+            </div>
+          </div>
+          <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="customer-content">
+      <section class="settings-layout">
+        <aside class="settings-sidebar">
+          <div class="sidebar-header">
+            <div class="sidebar-avatar">👤</div>
+            <div class="sidebar-user-info">
+              <div class="sidebar-username user-name">Guest</div>
+              <a href="#" class="sidebar-edit-link" id="editProfileLink">Edit Profile</a>
+            </div>
+          </div>
+
+          <div class="settings-group">
+            <p class="settings-group-title">Account</p>
+            <ul class="settings-menu">
+              <li class="settings-menu-item">
+                <a href="#" class="settings-nav-link" data-section="profile" data-i18n="Profile"
+                  >Profile</a
+                >
+              </li>
+              <li class="settings-menu-item">
+                <a href="addresses.html" class="settings-nav-link" data-i18n="My Addresses"
+                  >My Addresses</a
+                >
+              </li>
+              <li class="settings-menu-item">
+                <a
+                  href="#"
+                  class="settings-nav-link"
+                  data-section="cards"
+                  data-i18n="Bank Accounts / Cards"
+                  >Bank Accounts / Cards</a
+                >
+              </li>
+              <li class="settings-menu-item">
+                <a href="#" class="settings-nav-link" data-section="wallet" data-i18n="My Wallet"
+                  >My Wallet</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="settings-group">
+            <p class="settings-group-title">Preferences</p>
+            <ul class="settings-menu">
+              <li class="settings-menu-item">
+                <a
+                  href="#"
+                  class="settings-nav-link"
+                  data-section="notifications"
+                  data-i18n="Notifications"
+                  >Notifications</a
+                >
+              </li>
+              <li class="settings-menu-item">
+                <a
+                  href="#"
+                  class="settings-nav-link"
+                  data-section="privacy"
+                  data-i18n="Privacy Settings"
+                  >Privacy Settings</a
+                >
+              </li>
+              <li class="settings-menu-item">
+                <a
+                  href="#"
+                  class="settings-nav-link"
+                  data-section="security"
+                  data-i18n="Account Security"
+                  >Account Security</a
+                >
+              </li>
+              <li class="settings-menu-item">
+                <a href="#" class="settings-nav-link" data-section="language" data-i18n="Language"
+                  >Language</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div style="margin-top: 12px">
+            <button
+              id="logoutBtn"
+              class="book-btn"
+              style="background: #fff; color: #cc2020; border: 1px solid #eee; width: 100%"
+              data-i18n="Log Out"
+            >
+              Log Out
+            </button>
+          </div>
+        </aside>
+
+        <main class="settings-content">
+          <!-- Profile Section -->
+          <div id="profileSection" class="settings-section">
+            <h1 class="page-title" data-i18n="Profile">Profile</h1>
+            <p class="section-subtitle">Manage your personal information and profile picture.</p>
+            <div class="profile-card">
+              <div style="margin-bottom: 24px">
+                <p class="section-label">Profile Picture</p>
+                <img
+                  id="profilePhotoPreview"
+                  alt="Your profile photo"
+                  hidden
+                  width="96"
+                  height="96"
+                  style="border-radius: 50%; object-fit: cover"
+                />
+                <p id="photoStatus" role="status"></p>
+                <button
+                  id="removePhotoBtn"
+                  type="button"
+                  class="book-btn"
+                  hidden
+                  data-i18n="Remove photo"
+                >
+                  Remove photo</button
+                ><button
+                  id="uploadPhotoBtn"
+                  class="book-btn"
+                  style="width: auto"
+                  data-i18n="Upload Photo"
+                >
+                  Upload Photo
+                </button>
+                <input
+                  type="file"
+                  id="photoInput"
+                  accept="image/png,image/jpeg"
+                  style="display: none"
+                />
+              </div>
+              <label data-i18n="Full Name">Full Name</label>
+              <input id="profileName" />
+              <label data-i18n="Email">Email</label>
+              <input id="profileEmail" type="email" />
+              <label data-i18n="Phone">Phone</label>
+              <input id="profilePhone" />
+              <label data-i18n="Bio">Bio</label>
+              <textarea id="profileBio" rows="4" placeholder="Tell us about yourself..."></textarea>
+              <div class="modal-footer">
+                <button id="saveProfile" class="book-btn" data-i18n="Save Changes">
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Placeholder sections for other settings -->
+          <div id="cardsSection" class="settings-section" style="display: none">
+            <h1 class="page-title" data-i18n="Bank Accounts / Cards">Bank Accounts / Cards</h1>
+            <div class="profile-card">
+              <p data-i18n="Bank note">
+                Save a bank reference using only its last four digits. This cannot charge your
+                account. Card payments are unavailable until a payment provider is connected.
+              </p>
+              <form id="bankReferenceForm">
+                <label for="bankName" data-i18n="Bank">Bank</label
+                ><input
+                  id="bankName"
+                  required
+                  minlength="2"
+                  maxlength="80"
+                  autocomplete="off"
+                /><label for="accountName" data-i18n="Account name">Account name</label
+                ><input
+                  id="accountName"
+                  required
+                  minlength="2"
+                  maxlength="100"
+                  autocomplete="off"
+                /><label for="lastFour" data-i18n="Last four digits">Last four digits</label
+                ><input
+                  id="lastFour"
+                  required
+                  inputmode="numeric"
+                  pattern="[0-9]{4}"
+                  maxlength="4"
+                  autocomplete="off"
+                /><button class="book-btn" type="submit" data-i18n="Save bank reference">
+                  Save bank reference
+                </button>
+              </form>
+              <div id="bankReferences" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div id="walletSection" class="settings-section" style="display: none">
+            <h1 class="page-title" data-i18n="My Wallet">My Wallet</h1>
+            <div class="profile-card">
+              <p data-i18n="Wallet note">
+                Your order payment summary. No stored cash balance, top-ups or withdrawals are
+                available.
+              </p>
+              <dl>
+                <dt data-i18n="Paid / approved">Paid / approved</dt>
+                <dd id="walletPaid">—</dd>
+                <dt data-i18n="Awaiting payment">Awaiting payment</dt>
+                <dd id="walletPending">—</dd>
+                <dt data-i18n="Receipt under review">Receipt under review</dt>
+                <dd id="walletReview">—</dd>
+              </dl>
+              <button id="refreshWallet" type="button" class="book-btn" data-i18n="Refresh">
+                Refresh
+              </button>
+              <div id="walletHistory" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div id="notificationsSection" class="settings-section" style="display: none">
+            <h1 class="page-title">Notifications</h1>
+            <div class="profile-card">
+              <p>Notification preferences will be available soon.</p>
+            </div>
+          </div>
+
+          <div id="privacySection" class="settings-section" style="display: none">
+            <h1 class="page-title" data-i18n="Privacy Settings">Privacy Settings</h1>
+            <div class="profile-card">
+              <label
+                ><input id="shareBookingContact" type="checkbox" />
+                <span data-i18n="Share contact"
+                  >Share my email and phone with staff in new service bookings</span
+                ></label
+              >
+              <p data-i18n="Privacy note">
+                This applies to future bookings. Existing booking records are retained. Delivery
+                addresses are still required for orders. Your profile photo and bank references are
+                private to your account.
+              </p>
+              <button id="savePrivacy" class="book-btn" type="button" data-i18n="Save preferences">
+                Save preferences
+              </button>
+            </div>
+          </div>
+
+          <div id="securitySection" class="settings-section" style="display: none">
+            <h1 class="page-title" data-i18n="Account Security">Account Security</h1>
+            <div class="profile-card">
+              <p id="securityIdentity"></p>
+              <button
+                id="settingsResetPassword"
+                class="book-btn"
+                type="button"
+                data-i18n="Send password reset email"
+              >
+                Send password reset email
+              </button>
+              <p data-i18n="Security note">
+                Password changes are completed on Firebase's secure email link. Signing out all
+                devices revokes existing sessions, including this one.
+              </p>
+              <button
+                id="signOutAll"
+                class="book-btn"
+                type="button"
+                data-i18n="Sign out all devices"
+              >
+                Sign out all devices
+              </button>
+            </div>
+          </div>
+
+          <div id="languageSection" class="settings-section" style="display: none">
+            <h1 class="page-title" data-i18n="Language">Language</h1>
+            <div class="profile-card">
+              <label for="languageSelect" data-i18n="Settings language">Settings language</label
+              ><select id="languageSelect">
+                <option value="en">English</option>
+                <option value="fil">Filipino</option>
+              </select>
+              <p data-i18n="Language note">
+                This changes the settings interface. Product descriptions and other pages keep their
+                original language.
+              </p>
+              <button id="saveLanguage" class="book-btn" type="button" data-i18n="Save language">
+                Save language
+              </button>
+            </div>
+          </div>
+        </main>
+      </section>
+    </main>
+
+    <footer class="customer-footer">
+      IOTEL &copy; 2026 Goldcomm Corporation. All rights reserved.
+    </footer>
+
+    <script src="static/js/site.js"></script>
+    <script src="static/js/settings.js"></script>
+    <script type="module" src="static/js/settings-extra.js"></script>
+  </body>
+</html>

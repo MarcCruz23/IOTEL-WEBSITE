@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IOTEL Staff — Inventory</title>
+  <link rel="stylesheet" href="../static/css/global.css">
+  <link rel="stylesheet" href="../static/css/staff.css">
+</head>
+<body class="staff-body"><div class="staff-shell"><aside class="staff-sidebar"><div class="staff-brand"><span class="staff-brand-name">IOTEL</span><span class="staff-brand-sub">Staff Portal</span></div><nav class="staff-nav"><a href="dashboard.html"><span class="staff-nav-icon">▦</span>Dashboard</a><a href="orders.html"><span class="staff-nav-icon">▤</span>Orders</a><a class="active" href="inventory.html"><span class="staff-nav-icon">▥</span>Inventory</a><a href="messages.html"><span class="staff-nav-icon">✉</span>Messages</a></nav><div class="staff-sidebar-bottom"><span class="staff-user">Staff User</span><div class="staff-bottom-actions"><button class="staff-logout" type="button" onclick="logout()">⇥ Logout</button><button class="staff-collapse" type="button" aria-label="Collapse sidebar">‹</button></div></div></aside><main class="staff-main"><div class="staff-content"><h1 class="staff-page-title">Inventory</h1><div class="staff-toolbar"><span class="staff-kpi-label">Monitor stock levels across the catalog</span><input id="staffSearch" class="staff-search" placeholder="Search products" /></div><div id="staffInventoryList" class="staff-table-wrap"></div></div></main></div>
+  <script src="../static/js/site.js"></script>
+  <script type="module" src="../static/js/staff-inventory.js"></script>
+  <script src="../static/js/staff-shell.js"></script>
+  <script>document.querySelector('.staff-user').textContent=localStorage.getItem('IOTEL_USER_NAME')||'Staff User';</script>
+</body>
+</html>

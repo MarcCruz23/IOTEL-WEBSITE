@@ -1,0 +1,21 @@
+/* Orders / Order Tracking styles (based on checkout/cart styles) */
+.orders-container{max-width:1100px;margin:0 auto;padding:32px 24px}
+.page-title{font-size:28px;font-weight:800;color:#1A1A1A;margin-bottom:24px}
+.orders-list{display:flex;flex-direction:column;gap:16px}
+.order-card{background:#fff;border-radius:12px;padding:16px;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;flex-direction:column}
+.order-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.order-id{font-weight:700;color:#1A1A1A}
+.order-meta{color:#888;font-size:13px}
+.order-items{display:flex;flex-direction:column;gap:8px;border-top:1px solid #f5f5f5;padding-top:12px}
+.order-item{display:flex;align-items:center;gap:12px}
+.order-item-img{width:48px;height:48px;object-fit:cover;border-radius:6px}
+.order-status{padding:6px 10px;border-radius:999px;font-weight:700}
+.status-pending{background:#fff4e6;color:#ff7a45;border:1px solid #ffe7c7}
+.status-processing{background:#e6f7ff;color:#1890ff;border:1px solid #bae7ff}
+.status-shipped{background:#fffbe6;color:#faad14;border:1px solid #fff1b8}
+.status-delivered{background:#f6ffed;color:#52c41a;border:1px solid #d9f7be}
+.order-actions{margin-top:12px;display:flex;gap:8px}
+.view-details{background:transparent;border:1px solid #eee;padding:8px 12px;border-radius:8px;color:#333;text-decoration:none}
+.track-btn{background:#CC2020;color:#fff;padding:8px 12px;border-radius:8px;text-decoration:none}
+
+@media(max-width:640px){.orders-container{padding:20px 16px}}

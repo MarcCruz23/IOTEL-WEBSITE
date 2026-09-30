@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IOTEL — Catalog</title>
+  <link rel="stylesheet" href="static/css/global.css">
+  <link rel="stylesheet" href="static/css/catalog.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="customer-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="catalog.html" class="brand-link">
+          <span class="brand-name">IOTEL</span>
+          <span class="brand-sub">by Goldcomm</span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="catalog.html" class="nav-link active-link">Catalog</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+        <a href="messages.html" class="nav-link">Messages</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="cart-btn"><span class="cart-icon-btn">🛒</span></a>
+        <div class="profile-menu" id="profileMenuContainer">
+          <button class="profile-btn" id="profileMenuBtn">👤 <span class="user-name">Guest</span> ▼</button>
+          <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+            <a href="settings.html" class="dropdown-item">Profile</a>
+            <a href="addresses.html" class="dropdown-item">My Addresses</a>
+            <a href="settings.html" class="dropdown-item">Settings</a>
+            <div class="dropdown-divider"></div>
+            <button id="headerLogoutBtn2" class="dropdown-item logout-item">Log Out</button>
+          </div>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="customer-content">
+    <section class="catalog-container">
+      <!-- Filters -->
+      <div class="filters-bar">
+        <div id="categoryTabs" class="category-tabs"></div>
+        <div class="filter-controls">
+          <input id="searchInput" class="search-input" placeholder="Search products..." />
+          <select id="sortSelect" class="sort-select">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: Low → High</option>
+            <option value="price-desc">Price: High → Low</option>
+            <option value="name-asc">Name: A → Z</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="resultsCount" class="results-count"></p>
+
+      <div id="productGrid" class="product-grid"></div>
+
+      <!-- Detail overlay -->
+      <div id="detailOverlay" class="detail-overlay" style="display:none;">
+        <div class="detail-panel">
+          <button id="detailClose" class="close-button">✕</button>
+          <div class="detail-layout">
+            <div class="detail-gallery">
+              <img id="detailImage" class="detail-image" src="" alt="" />
+              <div id="galleryCounter" class="gallery-counter"></div>
+            </div>
+            <div class="detail-info">
+              <div class="detail-head">
+                <div id="detailCategory" class="cat-badge"></div>
+                <div class="detail-actions"></div>
+              </div>
+              <h2 id="detailTitle" class="detail-title"></h2>
+              <div class="detail-price-row"><span id="detailPrice" class="detail-price"></span></div>
+              <p id="detailDesc" class="detail-description"></p>
+              <div class="variation-selector"><div id="variationList" class="variation-list"></div></div>
+              <button id="detailAddBtn" class="hero-btn primary">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="customer-footer">IOTEL &copy; 2026 Goldcomm Corporation. All rights reserved.</footer>
+
+  <script src="static/js/mock-data.js"></script>
+  <script src="static/js/site.js"></script>
+  <script src="static/js/catalog.js"></script>
+</body>
+</html>

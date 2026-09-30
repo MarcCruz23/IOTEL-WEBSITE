@@ -1,0 +1,113 @@
+/* Checkout styles converted from checkout.component.scss */
+.checkout-container{max-width:1100px;margin:0 auto;padding:32px 24px}
+.breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:#888;margin-bottom:16px}
+.breadcrumb a{color:#CC2020;text-decoration:none}
+.page-title{font-size:28px;font-weight:800;color:#1A1A1A;margin-bottom:24px}
+.checkout-layout{display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start}
+@media(max-width:768px){.checkout-layout{grid-template-columns:1fr}}
+.checkout-main{display:flex;flex-direction:column;gap:16px}
+.section-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:20px;border:1px solid #f0f0f0}
+.section-title{font-size:16px;font-weight:700;color:#1A1A1A;margin-bottom:16px}
+.address-block{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+.address-text{font-size:14px;line-height:1.7;color:#333}
+
+/* Address Display */
+.address-display{position:relative}
+.address-info{font-size:14px;line-height:1.7;color:#333;margin-bottom:12px}
+.address-info p{margin:4px 0}
+.address-info strong{font-weight:600}
+.change-btn{background:transparent;border:1px solid #e8e8e8;color:#CC2020;padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.change-btn:hover{border-color:#CC2020;background:#fff5f5}
+
+/* Order Items */
+.order-items-list{display:flex;flex-direction:column;gap:8px}
+.order-item{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #f0f0f0;border-radius:8px;background:#fafafa}
+.order-item-img{width:48px;height:48px;object-fit:cover;border-radius:4px;flex-shrink:0}
+.order-item-info{flex:1;display:flex;flex-direction:column;gap:2px}
+.order-item-name{font-size:14px;font-weight:600;color:#1A1A1A;margin:0}
+.order-item-meta{font-size:12px;color:#888;margin:0}
+.order-item-total{font-size:14px;font-weight:600;color:#CC2020;flex-shrink:0}
+
+/* Payment Display */
+.payment-display{position:relative}
+.text-muted{color:#888;font-size:14px}
+.payment-info-box{background:#fafafa;border:1px solid #f0f0f0;border-radius:8px;padding:12px;margin-bottom:12px}
+.payment-info-box p{margin:4px 0;font-size:14px}
+.payment-info-box strong{font-weight:600}
+
+/* Checkout Summary */
+.checkout-summary{position:sticky;top:80px;background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:20px;border:1px solid #f0f0f0}
+.summary-title{font-size:16px;font-weight:700;color:#1A1A1A;margin-bottom:16px}
+.summary-row{display:flex;justify-content:space-between;font-size:14px;color:#555;margin-bottom:12px}
+.free-tag{color:#52c41a;font-weight:700}
+.total-row{font-size:16px;font-weight:800;color:#1A1A1A;margin-bottom:20px;padding-top:12px;border-top:2px solid #f0f0f0}
+.confirm-summary-total{font-size:16px;font-weight:800;color:#1A1A1A;padding-top:8px;border-top:1px solid #f0f0f0}
+.confirm-btn{width:100%;background:#CC2020;color:#fff;height:44px;border:none;padding:0 12px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.confirm-btn:hover:not(:disabled){background:#b01818}
+.confirm-btn:disabled{background:#e8e8e8;color:#999;cursor:not-allowed}
+
+/* Modal Styles */
+.payment-modal,.address-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;align-items:center;justify-content:center}
+.payment-modal-overlay,.address-modal-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.5)}
+.payment-modal-content,.address-modal-content{position:relative;z-index:1001;background:#fff;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.3);width:90%;max-width:600px;max-height:90vh;display:flex;flex-direction:column}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:24px;border-bottom:1px solid #f0f0f0}
+.modal-header h2{margin:0;font-size:20px;font-weight:700;color:#1A1A1A}
+.close-btn{background:none;border:none;font-size:24px;cursor:pointer;color:#888;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center}
+.close-btn:hover{color:#1A1A1A}
+.modal-body{flex:1;overflow-y:auto;padding:24px}
+.modal-footer{display:flex;gap:12px;justify-content:flex-end;padding:24px;border-top:1px solid #f0f0f0}
+.cancel-btn{background:#fff;border:1px solid #e8e8e8;color:#333;padding:10px 20px;border-radius:6px;font-size:14px;font-weight:600;cursor:pointer}
+.cancel-btn:hover{border-color:#ccc;background:#fafafa}
+
+/* Payment Method List */
+.payment-method-list{display:flex;flex-direction:column;gap:12px}
+.payment-method-card{display:flex;align-items:flex-start;gap:16px;padding:16px;border:2px solid #e8e8e8;border-radius:10px;cursor:pointer;transition:all 0.2s}
+.payment-method-card:hover{border-color:#CC2020;background:#fff5f5}
+.payment-method-card.selected{border-color:#CC2020;background:#fff5f5}
+.method-select{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.method-select label{cursor:pointer;font-weight:600;color:#1A1A1A}
+.method-details{flex:1;font-size:13px;color:#555;line-height:1.6}
+.method-details p{margin:4px 0}
+.detail-value{color:#888;font-weight:600}
+
+/* Reference Number Input */
+.ref-input{width:100%;padding:10px 12px;border:1px solid #e8e8e8;border-radius:6px;font-size:14px;font-family:inherit}
+.ref-input:focus{outline:none;border-color:#CC2020;box-shadow:0 0 0 3px rgba(204,32,32,0.1)}
+.ref-label-text{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:#1A1A1A}
+.ref-hint{font-size:12px;color:#888;margin-top:6px;display:block}
+
+/* Address Selection */
+.addresses-list{display:flex;flex-direction:column;gap:12px}
+.address-card-selectable{padding:16px;border:2px solid #e8e8e8;border-radius:10px;cursor:pointer;transition:all 0.2s}
+.address-card-selectable:hover{border-color:#CC2020;background:#fff5f5}
+.address-card-selectable.selected{border-color:#CC2020;background:#fff5f5}
+.address-card-content{font-size:14px;line-height:1.6;color:#333}
+.address-card-content p{margin:4px 0}
+.address-card-content strong{font-weight:600}
+.default-badge{font-size:12px;color:#52c41a;font-weight:600;margin-top:8px}
+.address-card-actions{display:flex;gap:8px;margin-top:12px}
+.address-card-actions .change-btn{padding:6px 12px}
+.checkout-address-form h3{margin:0 0 16px;font-size:16px;color:#1A1A1A}
+.checkout-address-form label{display:block;margin:10px 0 6px;font-size:13px;font-weight:600;color:#1A1A1A}
+.checkout-address-form input{width:100%;box-sizing:border-box;padding:10px 12px;border:1px solid #e8e8e8;border-radius:6px;font-size:14px;font-family:inherit}
+.checkout-address-form input:focus{outline:none;border-color:#CC2020;box-shadow:0 0 0 3px rgba(204,32,32,0.1)}
+.address-form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.address-form-location{grid-template-columns:1.2fr 1fr .7fr}
+.address-form-actions{display:flex;justify-content:flex-end;gap:12px;margin-top:20px}
+.address-form-actions .confirm-btn{width:auto;height:auto;padding:10px 20px}
+@media(max-width:600px){.address-form-row,.address-form-location{grid-template-columns:1fr}.address-card-actions{flex-wrap:wrap}}
+
+/* Confirmation Details */
+.confirmation-details{text-align:left;max-width:800px;margin:0 auto}
+
+/* Error Display */
+.error-text{color:#ff4d4f;font-size:13px;background:#fff1f0;padding:12px;border-radius:6px;border-left:3px solid #ff4d4f}
+
+/* Utility classes */
+.mt-4{margin-top:16px}
+.mb-4{margin-bottom:16px}
+.book-btn{background:#1A1A1A;color:#fff;padding:10px 16px;border:none;border-radius:6px;font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+.book-btn:hover{background:#000}
+.shop-btn{display:inline-block;background:#CC2020;color:#fff;padding:12px 24px;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s}
+.shop-btn:hover{background:#b01818}
+

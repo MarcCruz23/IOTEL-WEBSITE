@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IOTEL — Checkout</title>
+  <link rel="stylesheet" href="static/css/global.css" />
+  <link rel="stylesheet" href="static/css/checkout.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="customer-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="catalog.html" class="brand-link">
+          <span class="brand-name">IOTEL</span>
+          <span class="brand-sub">by Goldcomm</span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="catalog.html" class="nav-link">Catalog</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+        <a href="messages.html" class="nav-link">Messages</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="cart-btn"><span class="cart-icon-btn">🛒</span></a>
+        <div class="profile-menu" id="profileMenuContainer">
+          <button class="profile-btn" id="profileMenuBtn">👤 <span class="user-name">Guest</span> ▼</button>
+          <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+            <a href="settings.html" class="dropdown-item">Profile</a>
+            <a href="addresses.html" class="dropdown-item">My Addresses</a>
+            <a href="settings.html" class="dropdown-item">Settings</a>
+            <div class="dropdown-divider"></div>
+            <button id="headerLogoutBtn2" class="dropdown-item logout-item">Log Out</button>
+          </div>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="customer-content">
+    <section class="checkout-container">
+      <div class="breadcrumb"><a href="cart.html">Cart</a> <span class="bc-sep">›</span> <span class="bc-current">Checkout</span></div>
+      <h1 class="page-title">Checkout</h1>
+
+      <div class="checkout-layout">
+        <div class="checkout-main">
+          <!-- Shipping Address Section -->
+          <div class="section-card">
+            <h3 class="section-title">Shipping Address</h3>
+            <div id="addressDisplay" class="address-display">
+              <div id="addressContent"></div>
+              <button id="changeAddressBtn" class="change-btn">Change</button>
+            </div>
+          </div>
+
+          <!-- Order Items Section -->
+          <div class="section-card">
+            <h3 class="section-title">Order Items</h3>
+            <div id="orderItemsList" class="order-items-list"></div>
+          </div>
+
+          <!-- Payment Method Section -->
+          <div class="section-card">
+            <h3 class="section-title">Payment Method</h3>
+            <div id="paymentMethodDisplay" class="payment-display">
+              <p id="noPaymentText" class="text-muted">No payment method selected</p>
+              <div id="selectedPaymentInfo" style="display:none;">
+                <div id="paymentInfoContent"></div>
+              </div>
+              <button id="selectPaymentBtn" class="book-btn">+ Select Payment Method</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Summary Section -->
+        <div class="checkout-summary">
+          <h2 class="summary-title">Payment Summary</h2>
+          <div class="summary-row"><span>Subtotal</span><span id="subtotalText">₱0</span></div>
+          <div class="summary-row"><span>Shipping</span><span id="shippingText">FREE</span></div>
+          <div class="summary-row total-row"><span>Total</span><span id="totalText">₱0</span></div>
+          <button id="confirmOrderBtn" class="confirm-btn" disabled>Confirm Order</button>
+          <p id="orderError" class="error-text" style="display:none;margin-top:8px;"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="customer-footer">IOTEL &copy; 2026 Goldcomm Corporation. All rights reserved.</footer>
+
+  <!-- Payment Method Modal -->
+  <div id="paymentModal" class="payment-modal" style="display:none;">
+    <div class="payment-modal-overlay" id="paymentModalOverlay"></div>
+    <div class="payment-modal-content">
+      <div class="modal-header">
+        <h2>Select Payment Method</h2>
+        <button id="closePaymentModal" class="close-btn">✕</button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="payment-method-list">
+          <!-- GCash -->
+          <div class="payment-method-card" data-method="GCash">
+            <div class="method-select">
+              <input type="radio" name="paymentMethod" value="GCash" id="methodGCash" disabled />
+              <label for="methodGCash">GCash (not available yet)</label>
+            </div>
+            <div class="method-details">
+              <p><strong>GCash</strong></p>
+              <p>Send payment to:</p>
+              <p class="detail-value">Not enabled</p>
+            </div>
+          </div>
+
+          <!-- Bank Transfer -->
+          <div class="payment-method-card" data-method="Bank Transfer">
+            <div class="method-select">
+              <input type="radio" name="paymentMethod" value="Bank Transfer" id="methodBankTransfer" />
+              <label for="methodBankTransfer">Bank Transfer</label>
+            </div>
+            <div class="method-details">
+              <p><strong>Bank Transfer</strong></p>
+              <p><strong>Bank:</strong> Confirm with IOTEL</p>
+              <p><strong>Account Number:</strong> Request bank details from IOTEL</p>
+              <p><strong>Account Name:</strong> Goldcomm Corporation</p>
+            </div>
+          </div>
+
+          <!-- Maya -->
+          <div class="payment-method-card" data-method="Maya">
+            <div class="method-select">
+              <input type="radio" name="paymentMethod" value="Maya" id="methodMaya" disabled />
+              <label for="methodMaya">Maya (not available yet)</label>
+            </div>
+            <div class="method-details">
+              <p><strong>Maya</strong></p>
+              <p class="detail-value">Demo payment method</p>
+            </div>
+          </div>
+
+          <!-- Cash on Delivery -->
+          <div class="payment-method-card" data-method="Cash on Delivery">
+            <div class="method-select">
+              <input type="radio" name="paymentMethod" value="Cash on Delivery" id="methodCOD" />
+              <label for="methodCOD">Cash on Delivery (COD)</label>
+            </div>
+            <div class="method-details">
+              <p><strong>Cash on Delivery</strong></p>
+              <p>Pay when your order arrives</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reference Number Input -->
+        <div id="refNumberSection" style="display:none;margin-top:20px;">
+          <label class="ref-label-text">Payment Reference Number</label>
+          <input id="paymentRefNumber" type="text" placeholder="Enter payment reference number" class="ref-input" />
+          <p id="refHint" class="ref-hint" style="display:none;">Please enter your payment reference number</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="cancelPaymentBtn" class="cancel-btn">Cancel</button>
+        <button id="confirmPaymentBtn" class="confirm-btn" disabled>Confirm Payment Method</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Address Selection Modal -->
+  <div id="addressModal" class="address-modal" style="display:none;">
+    <div class="address-modal-overlay" id="addressModalOverlay"></div>
+    <div class="address-modal-content">
+      <div class="modal-header">
+        <h2>Select Shipping Address</h2>
+        <button id="closeAddressModal" class="close-btn">✕</button>
+      </div>
+      
+      <div class="modal-body">
+        <div id="addressesList" class="addresses-list"></div>
+        <form id="checkoutAddressForm" class="checkout-address-form" style="display:none;">
+          <h3 id="checkoutAddressFormTitle">Add New Address</h3>
+          <div class="address-form-row">
+            <div><label for="checkoutFullName">Full Name</label><input id="checkoutFullName" required /></div>
+            <div><label for="checkoutMobile">Phone Number</label><input id="checkoutMobile" required /></div>
+          </div>
+          <label for="checkoutAddressLine">Street / House / Building</label>
+          <input id="checkoutAddressLine" required />
+          <label for="checkoutBarangay">Barangay</label>
+          <input id="checkoutBarangay" required />
+          <div class="address-form-row address-form-location">
+            <div><label for="checkoutCity">City/Municipality</label><input id="checkoutCity" required /></div>
+            <div><label for="checkoutProvince">Province</label><input id="checkoutProvince" required /></div>
+            <div><label for="checkoutZip">ZIP Code</label><input id="checkoutZip" required /></div>
+          </div>
+          <div class="address-form-actions">
+            <button type="button" id="cancelCheckoutAddressBtn" class="cancel-btn">Cancel</button>
+            <button type="submit" class="confirm-btn">Save Address</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button id="addNewAddressBtn" class="book-btn">Add New Address</button>
+        <button id="cancelAddressBtn" class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="static/js/mock-data.js"></script>
+  <script src="static/js/site.js"></script>
+  <script type="module" src="static/js/checkout.js"></script>
+</body>
+</html>
+

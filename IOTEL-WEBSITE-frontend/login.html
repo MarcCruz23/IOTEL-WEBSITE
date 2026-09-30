@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IOTEL — Login</title>
+  <link rel="stylesheet" href="static/css/global.css">
+  <link rel="stylesheet" href="static/css/login.css">
+</head>
+<body>
+  <main class="customer-content">
+    <div class="login-page">
+      <div class="login-card">
+        <div class="brand">
+          <div class="brand-logo">
+            <span class="logo-text">IOTEL</span>
+            <span class="logo-sub">BY GOLDCOMM</span>
+          </div>
+        </div>
+
+        <h2 class="login-title">Sign in to your account</h2>
+
+        <form id="loginForm" novalidate>
+          <div class="login-field">
+            <label for="email"><span aria-hidden="true">*</span> Email</label>
+            <input type="email" id="email" placeholder="yourname@gmail.com" required />
+          </div>
+          <div class="login-field">
+            <label for="password"><span aria-hidden="true">*</span> Password</label>
+            <div class="password-input-wrap">
+              <input type="password" id="password" placeholder="••••••••" required />
+              <button type="button" class="password-toggle" id="passwordToggle" aria-label="Show password" aria-pressed="false">
+                <svg class="password-icon password-icon-visible" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"/><circle cx="12" cy="12" r="2.5"/></svg>
+                <svg class="password-icon password-icon-hidden" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18M10.6 6.2A10.8 10.8 0 0 1 12 6c6.5 0 10 6 10 6a18.8 18.8 0 0 1-3.1 3.7M6.2 6.2C3.5 8.1 2 12 2 12s3.5 6 10 6c1.7 0 3.1-.4 4.4-1"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+              </button>
+            </div>
+          </div>
+          <input id="selectedRole" type="hidden" value="customer" />
+          <p id="loginError" class="login-error" role="alert" aria-live="polite"></p>
+          <button type="submit" class="login-btn">Sign In</button>
+          <button type="button" id="resetPassword" class="register-cta">Forgot password?</button>
+        </form>
+
+        <div class="demo-credentials">
+          <p class="demo-title">VERIFY YOUR GMAIL ADDRESS</p>
+          <p class="demo-note">Open the verification link in your Gmail inbox before signing in.</p>
+          <button type="button" id="resendVerification" class="register-cta">Resend verification email</button>
+        </div>
+
+        <div class="register-prompt">
+          <span>Don't have an account?</span>
+          <a href="register.html" class="register-cta">Create an Account</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="static/js/mock-data.js"></script>
+  <script src="static/js/site.js?v=2"></script>
+  <script type="module" src="static/js/login.js"></script>
+  <script>
+    const passwordInput = document.getElementById('password');
+    const passwordToggle = document.getElementById('passwordToggle');
+    passwordToggle.addEventListener('click', () => {
+      const isVisible = passwordInput.type === 'text';
+      passwordInput.type = isVisible ? 'password' : 'text';
+      passwordToggle.setAttribute('aria-label', isVisible ? 'Show password' : 'Hide password');
+      passwordToggle.setAttribute('aria-pressed', String(!isVisible));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+1. [GET] http://localhost:9010/register.html => [200] OK
+3. [GET] http://localhost:9010/static/css/register.css => [200] OK
+6. [GET] http://localhost:9010/static/js/firebase-config.js => [304] Not Modified
+7. [GET] http://localhost:9010/static/js/register.js => [304] Not Modified
+8. [GET] https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js => [200] 
+9. [GET] https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js => [200] 
+10. [GET] https://www.gstatic.com/firebasejs/12.2.1/firebase-firestore.js => [200] 

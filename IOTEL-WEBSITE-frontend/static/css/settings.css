@@ -1,0 +1,26 @@
+/* Settings page styles (based on settings.component.scss) */
+.settings-layout{max-width:1100px;margin:0 auto;padding:32px 24px;display:flex;gap:20px}
+.settings-sidebar{width:260px}
+.sidebar-header{display:flex;gap:12px;align-items:center;margin-bottom:12px}
+.sidebar-avatar{font-size:32px}
+.sidebar-username{font-weight:700}
+.sidebar-edit-link{color:#CC2020;text-decoration:none;font-size:12px}
+.sidebar-edit-link:hover{text-decoration:underline}
+.settings-group{margin-top:12px}
+.settings-group-title{font-size:13px;color:#888;margin:0 0 8px}
+.settings-menu{list-style:none;padding:0;margin:0}
+.settings-menu-item{padding:8px 0}
+.settings-menu-item a{color:#333;text-decoration:none;padding:6px 8px;border-radius:4px;display:block;transition:all 0.2s}
+.settings-menu-item a:hover{background:#f0f0f0;color:#CC2020}
+.settings-menu-item.active a{color:#CC2020;font-weight:700;background:#fff1f0}
+.settings-content{flex:1}
+.settings-section{animation:fadeIn 0.2s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.section-subtitle{color:#666;font-size:14px;margin-bottom:20px}
+.section-label{font-weight:600;color:#333;margin-bottom:8px;display:block}
+.profile-card{background:#fff;padding:16px;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.profile-card label{display:block;margin-top:12px;font-weight:600;font-size:14px}
+.profile-card input,.profile-card textarea{width:100%;padding:8px;margin-top:6px;border:1px solid #e8e8e8;border-radius:6px;font-size:14px}
+.modal-footer{display:flex;justify-content:flex-end;margin-top:16px}
+
+@media(max-width:800px){.settings-layout{flex-direction:column;padding:20px 16px}.settings-sidebar{width:100%}}

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IOTEL — Services</title>
+  <link rel="stylesheet" href="static/css/global.css">
+  <link rel="stylesheet" href="static/css/services.css">
+</head>
+<body>
+  <header class="customer-header">
+    <div class="header-inner">
+      <div class="brand">
+        <a href="catalog.html" class="brand-link">
+          <span class="brand-name">IOTEL</span>
+          <span class="brand-sub">by Goldcomm</span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="catalog.html" class="nav-link">Catalog</a>
+        <a href="services.html" class="nav-link active-link">Services</a>
+        <a href="orders.html" class="nav-link">Orders</a>
+        <a href="messages.html" class="nav-link">Messages</a>
+        <a href="about.html" class="nav-link">About</a>
+      </nav>
+      <div class="header-actions">
+        <a href="cart.html" class="cart-btn"><span class="cart-icon-btn">🛒</span></a>
+        <div class="profile-menu" id="profileMenuContainer">
+          <button class="profile-btn" id="profileMenuBtn">👤 <span class="user-name">Guest</span> ▼</button>
+          <div class="profile-dropdown" id="profileDropdown" style="display:none;">
+            <a href="settings.html" class="dropdown-item">Profile</a>
+            <a href="addresses.html" class="dropdown-item">My Addresses</a>
+            <a href="settings.html" class="dropdown-item">Settings</a>
+            <div class="dropdown-divider"></div>
+            <button id="headerLogoutBtn2" class="dropdown-item logout-item">Log Out</button>
+          </div>
+        </div>
+        <button class="hamburger-btn" id="hamburgerBtn">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="customer-content">
+    <section class="services-container">
+      <h1 class="page-title">Services</h1>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="available">Available Services</button>
+        <button class="tab-btn" data-tab="bookings">My Bookings</button>
+      </div>
+
+      <div id="tab-available" class="tab-panel">
+        <div id="servicesGrid" class="services-grid"></div>
+      </div>
+
+      <div id="tab-bookings" class="tab-panel" style="display:none;">
+        <div id="noBookings" class="empty-cart" style="display:none;">
+          <p>No bookings yet</p>
+          <div class="mt-4 text-center">
+            <button id="bookServiceBtn" class="book-btn">Book a Service</button>
+          </div>
+        </div>
+        <div id="bookingsList" class="bookings-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="customer-footer">IOTEL &copy; 2026 Goldcomm Corporation. All rights reserved.</footer>
+
+  <!-- Booking modal -->
+  <div id="bookingModal" class="modal" style="display:none;">
+    <div class="modal-box">
+      <h2>Book a Service</h2>
+      <form id="bookingForm">
+        <label>Service</label>
+        <select id="serviceSelect"></select>
+
+        <div class="form-row">
+          <div class="flex-1">
+            <label>Preferred Date</label>
+            <input type="date" id="preferredDate" required />
+          </div>
+          <div style="width:140px">
+            <label>Time</label>
+            <select id="preferredTime">
+              <option>09:00</option>
+              <option>10:00</option>
+              <option>11:00</option>
+              <option>13:00</option>
+              <option>14:00</option>
+              <option>15:00</option>
+            </select>
+          </div>
+        </div>
+
+        <label>Full Name</label>
+        <input id="customerName" required />
+        <div class="form-row">
+          <div class="flex-1">
+            <label>Email</label>
+            <input id="customerEmail" type="email" required />
+          </div>
+          <div class="flex-1">
+            <label>Mobile</label>
+            <input id="customerMobile" required />
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" id="cancelBookingBtn">Cancel</button>
+          <button type="submit" class="book-btn">Submit Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="static/js/site.js"></script>
+  <script type="module" src="static/js/services.js"></script>
+</body>
+</html>

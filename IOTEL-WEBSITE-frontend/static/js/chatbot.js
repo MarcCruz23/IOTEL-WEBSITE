@@ -1,0 +1,13 @@
+// Floating chatbot widget (demo only) — creates a small chat bubble and simple modal
+(function(){
+  function createWidget(){
+    if(document.getElementById('iotChatWidget')) return;
+    const btn = document.createElement('div'); btn.id='iotChatWidget'; btn.style.position='fixed'; btn.style.right='18px'; btn.style.bottom='18px'; btn.style.width='56px'; btn.style.height='56px'; btn.style.borderRadius='28px'; btn.style.background='#CC2020'; btn.style.display='flex'; btn.style.alignItems='center'; btn.style.justifyContent='center'; btn.style.color='#fff'; btn.style.cursor='pointer'; btn.textContent='💬'; document.body.appendChild(btn);
+    const panel = document.createElement('div'); panel.id='iotChatPanel'; panel.style.position='fixed'; panel.style.right='18px'; panel.style.bottom='86px'; panel.style.width='320px'; panel.style.maxHeight='420px'; panel.style.borderRadius='8px'; panel.style.boxShadow='0 6px 24px rgba(0,0,0,0.2)'; panel.style.background='#fff'; panel.style.display='none'; panel.style.flexDirection='column'; panel.style.overflow='hidden';
+    panel.innerHTML = `<div style="padding:12px;background:#1A1A1A;color:#fff;font-weight:700">IOTEL Chat</div><div id="iotChatBody" style="padding:12px;overflow:auto;height:240px"></div><div style="padding:8px;border-top:1px solid #f0f0f0;display:flex;gap:8px"><input id="iotChatInput" placeholder="Ask a question" style="flex:1;padding:8px;border:1px solid #e8e8e8;border-radius:6px"/><button id="iotChatSend" class="book-btn">Send</button></div>`;
+    document.body.appendChild(panel);
+    btn.addEventListener('click', ()=>{ panel.style.display = panel.style.display==='none' ? 'flex' : 'none'; });
+    document.getElementById('iotChatSend').addEventListener('click', ()=>{ const v = document.getElementById('iotChatInput').value.trim(); if(!v) return; const body = document.getElementById('iotChatBody'); const msg = document.createElement('div'); msg.style.margin='6px 0'; msg.style.padding='8px'; msg.style.background='#f0f0f0'; msg.style.borderRadius='8px'; msg.textContent = 'You: '+v; body.appendChild(msg); document.getElementById('iotChatInput').value=''; setTimeout(()=>{ const reply = document.createElement('div'); reply.style.margin='6px 0'; reply.style.padding='8px'; reply.style.background='#e6f7ff'; reply.style.borderRadius='8px'; reply.textContent = 'Support: Thanks for your message — this is a demo response.'; body.appendChild(reply); body.scrollTop = body.scrollHeight; },700); });
+  }
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded', createWidget); } else createWidget();
+})();

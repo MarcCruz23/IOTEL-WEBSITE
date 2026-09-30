@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northstar Studio</title>
+    <meta
+      name="description"
+      content="A separate mini website created in a new folder without touching the current app."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <div class="brand">Northstar</div>
+        <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+        <nav class="main-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Fresh idea. Clear direction.</p>
+            <h1>Build a better online presence.</h1>
+            <p class="lead">
+              This is a separate mini website inside its own folder, so it won’t interfere
+              with the existing project or Angular app.
+            </p>
+            <div class="actions">
+              <a class="primary-btn" href="#contact">Get Started</a>
+              <a class="secondary-btn" href="#services">View Services</a>
+            </div>
+            <ul class="stats">
+              <li><strong>48h</strong><span>launch time</span></li>
+              <li><strong>24/7</strong><span>support</span></li>
+              <li><strong>99%</strong><span>satisfaction</span></li>
+            </ul>
+          </div>
+
+          <div class="hero-card">
+            <div class="card-top">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="mock-window">
+              <div class="mock-bar">
+                <span>website-preview</span>
+                <span class="pill">Live</span>
+              </div>
+              <div class="mock-body">
+                <div class="chart-bars">
+                  <span style="height: 35%"></span>
+                  <span style="height: 55%"></span>
+                  <span style="height: 70%"></span>
+                  <span style="height: 90%"></span>
+                  <span style="height: 80%"></span>
+                  <span style="height: 100%"></span>
+                </div>
+                <div class="metric-row">
+                  <div>
+                    <small>Visitors</small>
+                    <strong>14.2k</strong>
+                  </div>
+                  <div>
+                    <small>Growth</small>
+                    <strong>+32%</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="container section-head">
+          <p class="eyebrow">Who we are</p>
+          <h2>Built for modern brands.</h2>
+        </div>
+        <div class="container cards three-up">
+          <article class="info-card">
+            <h3>Strategy</h3>
+            <p>We turn your goals into a crisp plan, with messaging and priorities that stay focused.</p>
+          </article>
+          <article class="info-card">
+            <h3>Design</h3>
+            <p>Clean visuals, strong structure, and responsive pages that look polished on every screen.</p>
+          </article>
+          <article class="info-card">
+            <h3>Growth</h3>
+            <p>We help convert attention into action with conversion-focused layouts and customer journeys.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section alt" id="services">
+        <div class="container section-head">
+          <p class="eyebrow">What we do</p>
+          <h2>Simple services, powerful results.</h2>
+        </div>
+        <div class="container cards three-up">
+          <article class="service-card">
+            <span class="icon">01</span>
+            <h3>Landing Pages</h3>
+            <p>Launch-ready pages that communicate value in seconds.</p>
+          </article>
+          <article class="service-card">
+            <span class="icon">02</span>
+            <h3>Brand Sites</h3>
+            <p>Complete experiences designed to feel premium and trustworthy.</p>
+          </article>
+          <article class="service-card">
+            <span class="icon">03</span>
+            <h3>Support</h3>
+            <p>Fast iteration and adjustments to help your brand keep moving.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="container footer-wrap">
+        <div>
+          <div class="brand">Northstar</div>
+          <p>Separate website demo. Independent from the main app.</p>
+        </div>
+        <a href="mailto:hello@northstar.example">hello@northstar.example</a>
+      </div>
+      <p class="timestamp">Last updated: <span id="today"></span></p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
